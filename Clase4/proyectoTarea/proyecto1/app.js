@@ -6,6 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./controllers/index');
 var usersRouter = require('./controllers/users');
+
+//esta rutas las agregamos en la tarea
 var productosRouter = require('./controllers/productos');
 var usuariosRouter = require('./controllers/usuarios');
 var reservasRouter = require ('./controllers/reservas');
@@ -24,6 +26,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+//que archivo va a prosesar la ruta cuando ingrese
+
 app.use('/productos', productosRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/reservas', reservasRouter);
