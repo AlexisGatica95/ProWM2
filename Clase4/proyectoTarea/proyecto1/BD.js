@@ -1,3 +1,4 @@
+require ('dotenv').config();
 //se hace fuera de public
 
 //incluimos el modulo de la DB obviamente
@@ -17,7 +18,7 @@ const util = require('util');//utils hace referencia al modulo instalado
 //const query = util.promisify(mysql.query).bind(mysql);
 
 const pool = mysql.createPool({
-    host: 'localhost',
+    host: process.env.DATABASE_HOST,
     port: '3306',
     user: 'root',
     password : '',

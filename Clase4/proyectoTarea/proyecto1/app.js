@@ -10,7 +10,9 @@ var usersRouter = require('./controllers/users');
 //esta rutas las agregamos en la tarea
 var productosRouter = require('./controllers/productos');
 var usuariosRouter = require('./controllers/usuarios');
-var reservasRouter = require ('./controllers/reservas');
+var reservasRouter = require('./controllers/reservas');
+
+const productosAdmin = require('./controllers/productosAdmin');
 
 var app = express();
 
@@ -32,6 +34,8 @@ app.use('/users', usersRouter);
 app.use('/productos', productosRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/reservas', reservasRouter);
+
+app.use('/productosAdmin',productosAdmin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
